@@ -21,13 +21,13 @@ function createRemoteDB(host, port) {
                 },
                 url,
                 body,
-            }, (err, req, body) => {
+            }, (err, req, res) => {
                 if (err) {
                     console.error('Error con la base de datos remota', err);
                     reject(err.message);
                 }
-                const res = JSON.parse(body);
-                resolve(res.body);
+                const ress = JSON.parse(res);
+                resolve(ress.body);
             })
         })
     }

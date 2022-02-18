@@ -1,7 +1,16 @@
 {
     "version": 2,
     "env": {
-        "MYSQL_HOST": "sql10.freemysqlhosting.net"
+        "REMOTE_DB": false,
+        "API_PORT": 3000,
+        "POST_PORT": 3002,
+        "JWT_SECRET": "notasecret",
+        "MYSQL_HOST": "sql10.freemysqlhosting.net",
+        "MYSQL_USER": "sql10472844",
+        "MYSQL_PASS": "5rmSiZLtUH",
+        "MYSQL_DB": "sql10472844",
+        "MYSQL_SERVICE_HOST": "localhost",
+        "MYSQL_SERVICE_PORT": 3001
     },
     "builds": [
         {
@@ -10,6 +19,10 @@
         },
         {
             "src": "post/index-post.js",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "mysql/index-mysql.js",
             "use": "@vercel/node"
         }
     ],
